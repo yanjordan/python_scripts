@@ -1,11 +1,11 @@
 from pymol import cmd
 
 
-def showresid(resnum):
+def showresid(resnum,rad='4.0'):
     cmd.hide('everything','all')
     cmd.select("centerres","resi "+resnum)
     
-    cmd.select("ressite","(byres (resi "+ resnum + ")expand 4.0)")
+    cmd.select("ressite","(byres (resi "+ resnum + ")expand "+ rad +")")
     cmd.show_as("wire","ressite")
     
     cmd.show_as("licorice","centerres")

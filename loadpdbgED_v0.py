@@ -35,23 +35,7 @@ def loadpdbED(name, resn):
     cmd.color('green','mapg')
 #
     cmd.zoom("site",animate=-1)
-    #view
-    try:
-        view=[0]*18
-        fv=open('view.dat','r')
-        fv.readline()
-        for i in range(6):
-            line=fv.readline()
-            var=line.replace(")"," ").replace("\\"," ").split(",")
-            view[i*3]=float(var[0])
-            view[i*3+1]=float(var[1])
-            view[i*3+2]=float(var[2])
-        fv.close()
-        cmd.set_view(view)
-        cmd.ray(600,600)
-        cmd.png(name+'.png',1200,1200,300,1)
-    except IOError:
-        print("view.dat is not accessible.")
+    #
     #cmd.set_view((view))
 #
     #cmd.ray(600,600)

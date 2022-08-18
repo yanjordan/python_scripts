@@ -11,5 +11,9 @@ show residue (id number) with licorice, and this neighbouring (< 4 angstrom>) re
 
 
 ### loadpdbgED.py
-loadpdbgED pdnfile, resn, 2fcf0.ccp4, fcf0.ccp4
+loadpdbgED PDB(remove .pdb), resn
 show electron density (sigma, blue) and difference of electon densiy (+ & - 3 sigma, red and green) around residue (resn) with licorice, and this neighbouring (< 4 angstrom>) residues with wire
+
+### savepng.py
+savepng name
+save as name.png if no name give then save XX.png
