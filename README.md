@@ -6,8 +6,10 @@ Pymol --> Plugin --> Plugin Manager --> Install New Plugin --> Choose file... --
 
 ## scripts
 ### showresid.py
-showresid resid
-show residue (id number) with licorice, and this neighbouring (< 4 angstrom>) residues with wire
+usage： showresid chain+resid
+        showresid chain+resid, dis  
+        chain is optional, default chain A without chain info
+show residue (id number) with licorice, and this neighbouring (< 4 (dis) angstrom>) residues with wire
 
 
 ### loadpdbgED.py
