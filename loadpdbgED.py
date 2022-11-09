@@ -48,8 +48,8 @@ def loadpdbED(name, resn):
             view[i*3+2]=float(var[2])
         fv.close()
         cmd.set_view(view)
-        cmd.ray(600,600)
-        cmd.png(name+'.png',1200,1200,300,1)
+        cmd.ray(1200,1200)
+        cmd.png(name+'.png',1200,1200,500,1)
     except IOError:
         print("view.dat is not accessible.")
     #cmd.set_view((view))
