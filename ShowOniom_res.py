@@ -34,7 +34,7 @@ def reslist(selection,output='N'):
 		f.close()
 		print("Results saved in Listres__%s.txt" %(selection))
 
-def ShowOniom(resi, mrad='3.0',rrad='0.0',high='0.01'):
+def ShowOniom_res(res1, res2, mrad='3.0',rrad='0.0',high='0.01'):
     #cmd.hide('everything','all')
     cmd.bg_color('1 1 1')
     cmd.set('orthoscopic','1')
@@ -54,9 +54,9 @@ def ShowOniom(resi, mrad='3.0',rrad='0.0',high='0.01'):
     cmd.hide('spheres')
     cmd.hide('licorice')
     
-    chain, resnum=str2cr(resi)
-    
-    cmd.select("centerres","resi "+resnum)
+    chain, resnum=str2cr(res1)
+    chain1, resnum1=str2cr(res2)
+    cmd.select("centerres","resi "+resnum+"+"+resnum1)
     
     cmd.select("highlayer","(byres centerres expand "+ high +")")
     cmd.select("mediumlayer","(byres centerres expand "+ mrad +" and (not highlayer))")
@@ -82,5 +82,5 @@ def ShowOniom(resi, mrad='3.0',rrad='0.0',high='0.01'):
     
     cmd.zoom("mediumlayer",animate=-1)
     
-cmd.extend('ShowOniom', ShowOniom)
+cmd.extend('ShowOniom_res', ShowOniom_res)
 #ShowOniom('5p9i_a_flip_ligH', '701')
